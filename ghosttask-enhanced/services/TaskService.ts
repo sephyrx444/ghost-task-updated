@@ -32,7 +32,7 @@ export class TaskService {
     logger.info(`Task created: ${task.title}`);
 
     await this.activityRepo.create({
-      action: 'created',
+      action: 'added',
       taskTitle: task.title,
       details: `Created task with priority ${task.priority}`,
     });
