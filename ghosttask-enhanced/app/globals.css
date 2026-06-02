@@ -1,0 +1,92 @@
+@import "tailwindcss";
+
+:root {
+  --background: #f8fafc;
+  --foreground: #0f172a;
+  --sidebar: #110e2e;
+  --sidebar-active: #6366f1;
+  --card: #ffffff;
+  --border: #e2e8f0;
+  
+  --priority-high: #ef4444;
+  --priority-medium: #f59e0b;
+  --priority-low: #10b981;
+}
+
+body {
+  background-color: var(--background);
+  color: var(--foreground);
+  font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+  overflow-x: hidden;
+}
+
+/* Custom Float Animation for AI Ghost Mascot */
+@keyframes float {
+  0% {
+    transform: translateY(0px) scale(1);
+    filter: drop-shadow(0 5px 15px rgba(99, 102, 241, 0.2));
+  }
+  50% {
+    transform: translateY(-8px) scale(1.02);
+    filter: drop-shadow(0 15px 25px rgba(99, 102, 241, 0.4));
+  }
+  100% {
+    transform: translateY(0px) scale(1);
+    filter: drop-shadow(0 5px 15px rgba(99, 102, 241, 0.2));
+  }
+}
+
+.animate-ghost-float {
+  animation: float 4s ease-in-out infinite;
+}
+
+/* Wave form animation for the Ghost voice amplitude visualizer */
+@keyframes wave {
+  0%, 100% { transform: scaleY(0.3); }
+  50% { transform: scaleY(1); }
+}
+
+.animate-wave-bar {
+  animation: wave 1.2s ease-in-out infinite;
+  transform-origin: bottom;
+}
+
+/* Dynamic glow effect for Focus Mode active sessions */
+@keyframes pulse-glow {
+  0%, 100% {
+    box-shadow: 0 0 10px rgba(99, 102, 241, 0.2), 0 0 20px rgba(99, 102, 241, 0.1);
+  }
+  50% {
+    box-shadow: 0 0 20px rgba(99, 102, 241, 0.5), 0 0 45px rgba(99, 102, 241, 0.3);
+  }
+}
+
+.focus-glow-active {
+  animation: pulse-glow 2.5s infinite;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
+}
+
+/* Transition utility for task cards interaction */
+.task-card-transition {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.task-card-transition:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 20px -8px rgba(0, 0, 0, 0.08);
+}
